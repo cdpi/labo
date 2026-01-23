@@ -1,0 +1,34 @@
+{
+"manifest_version": 3,
+"name": "__MSG_extension_name__",
+"description": "__MSG_extension_description__",
+"version": "0.0.1",
+"default_locale": "fr",
+"icons":
+	{
+	"32": "images/icons/icon32x32.png",
+	"48": "images/icons/icon48x48.png",
+	"64": "images/icons/icon64x64.png",
+	"128": "images/icons/icon128x128.png",
+	"256": "images/icons/icon256x256.png",
+	"512": "images/icons/icon512x512.png"
+	},
+"permissions":
+	[
+	"tabs",
+	"activeTab",
+	"scripting",
+	"downloads",
+	"storage"
+	],
+"action":
+	{
+	"default_icon": "images/icons/icon48x48.png",
+	"default_title": "__MSG_action_default_title__"
+	},
+"background":
+	{
+	"scripts": ["scripts/background.js"],
+	"type": "module"
+	}
+}
