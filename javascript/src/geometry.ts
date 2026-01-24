@@ -32,9 +32,36 @@ function pointsToString(points:Array<IPoint>):string
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Polygon
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Polygon // implements IPath
+	{
+	/*
+	points:Array<IPoint>;
+
+	public constructor()
+		{
+		}
+	*/
+
+	public toBezier(from:IPoint, to:IPoint, tension:number):Array<IPoint>
+		{
+		const dx = to.x - from.x;
+		const dy = to.y - from.y;
+
+		const controlPoint1 = {x: from.x + dx * tension, y: from.y};
+		const controlPoint2 = {x: to.x - dy * tension, y: to.y};
+
+		return new Array(from, controlPoint1, controlPoint2, to);
+		}
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export
 	{
 	IPoint,
-	Point
+	Point,
+	Polygon
 	};

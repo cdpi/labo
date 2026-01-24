@@ -2,9 +2,10 @@
 image2sketch/
 image-to-sketch/
 
-temp/
+javascript/js/
 
 node_modules/
+temp/
 
 *.pem
 *.key

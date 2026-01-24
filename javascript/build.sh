@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+rm -f js/*.js
+
 tsc
 
-# uglifyjs js/cdpi.js > js/cdpi.min.js
+for file in js/*.js; do
+	min=${file%.*}.min.js
+	#uglifyjs "$file" -o "$min" --compress --mangle
+	uglifyjs "$file" -o "$min"
+done
+
 # sed -f commands.sed js/cdpi.min.js > js/cdpi2.min.js
 # cat js/geometry.min2.mjs js/dom.min2.mjs js/drawing.min2.mjs js/game.min2.mjs src/export.txt > dist/cdpi.min.mjs
