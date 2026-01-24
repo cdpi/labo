@@ -1,0 +1,13 @@
+{
+"commands":
+	{
+	"run-capture":
+		{
+		"description": "Capturer",
+		"suggested_key":
+			{
+			"default": "Alt+C"
+			}
+		}
+	}
+}
