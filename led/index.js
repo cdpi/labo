@@ -1,18 +1,14 @@
 
-import { WiZ } from "./wiz.js";
+import { getPilot } from "../javascript/js/wiz.js";
 import express from "express";
 
 const LAMP = {IP: "172.22.22.95", PORT: 38899};
 
-const wiz = new WiZ(LAMP.IP, LAMP.PORT);
-
 const app = express();
 
-app.get("/", (_request, response) =>
-	{
-	response.send("WiZ");
-	});
+app.use(express.static("public"));
 
+/*
 app.get("/query", async (_request, response) =>
 	{
 	const result = await wiz.query();
@@ -42,3 +38,6 @@ app.listen(3000, () =>
 	{
 	console.log("WiZ server is running on http://localhost:3000");
 	});
+*/
+
+app.listen(3000);
