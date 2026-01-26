@@ -1,6 +1,6 @@
 
 import { type IRGB } from "./color.js";
-import { sendReceiveString } from "./udp.js";
+import { sendAndReceive } from "./udp.js";
 
 /*
 type Method = "getPilot" | "setPilot";
@@ -34,7 +34,7 @@ async function getPilot(ip:string, port:number):Promise<any>
 		{
 		const command:string = JSON.stringify({method: "getPilot", params: {}});
 
-		const response = await sendReceiveString(command, ip, port);
+		const response = await sendAndReceive(command, ip, port);
 
 		const json = JSON.parse(response);
 
@@ -53,7 +53,7 @@ async function setPilot(ip:string, port:number, color:IRGB, dimming:number):Prom
 		{
 		const command:string = JSON.stringify({method: "setPilot", params: {state: true, r: color.red, g: color.green, b: color.blue, dimming}});
 
-		const response = await sendReceiveString(command, ip, port);
+		const response = await sendAndReceive(command, ip, port);
 
 		const json = JSON.parse(response);
 
