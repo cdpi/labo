@@ -1,5 +1,5 @@
 
-import * as fs from "node:fs";
+import { readFileSync } from "node:fs";
 
 const FILENAME_APPFILTER = "appfilter.xml";
 const FILENAME_DRAWABLE = "drawable.xml";
@@ -13,7 +13,7 @@ type ParseCallback = (name:string, pkg:string, activity:string) => void;
 
 function parse(path:string, callback:ParseCallback):void
 	{
-	const csv = fs.readFileSync(path, "utf-8");
+	const csv = readFileSync(path, "utf-8");
 	const lines = csv.trim().split("\n").sort();
 
 	lines.forEach(line =>

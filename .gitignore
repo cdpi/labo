@@ -5,9 +5,12 @@ image-to-sketch/
 javascript/js/
 
 node_modules/
-temp/
 
-*.pem
-*.key
-*.crt
+temp/
+tests/
+
 *.cert
+*.crt
+*.key
+*.pem
+*.zip

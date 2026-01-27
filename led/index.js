@@ -1,12 +1,29 @@
 
 import { getPilot } from "../javascript/js/wiz.js";
+import { readFileSync } from "fs";
 import express from "express";
 
 const LAMP = {IP: "172.22.22.95", PORT: 38899};
 
+const lamps = JSON.parse(readFileSync("lamps.json", "UTF-8"));
+
+console.log(lamps);
+
 const app = express();
 
+//app.router()
+
 app.use(express.static("public"));
+
+app.get("/pilot", async (_request, response) =>
+	{
+	response.send("GET");
+	});
+
+app.post("/pilot", async (_request, response) =>
+	{
+	response.send("POST");
+	});
 
 /*
 app.get("/query", async (_request, response) =>

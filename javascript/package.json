@@ -1,0 +1,15 @@
+{
+"type": "module",
+"dependencies":
+    {
+    "class-transformer": "^0.5.1",
+    "fast-xml-parser": "^5.3.3",
+    "reflect-metadata": "^0.2.2",
+    "undici-types": "^7.16.0"
+    },
+"devDependencies":
+    {
+    "@types/node": "^25.0.10",
+    "typescript": "^5.9.3"
+    }
+}

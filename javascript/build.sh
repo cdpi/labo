@@ -7,7 +7,7 @@ tsc
 for file in js/*.js; do
 	min=${file%.*}.min.js
 	#uglifyjs "$file" -o "$min" --compress --mangle
-	uglifyjs "$file" -o "$min"
+	#uglifyjs "$file" -o "$min"
 done
 
 # sed -f commands.sed js/cdpi.min.js > js/cdpi2.min.js
