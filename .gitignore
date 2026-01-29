@@ -2,12 +2,9 @@
 image2sketch/
 image-to-sketch/
 
-javascript/js/
-
 node_modules/
 
 temp/
-tests/
 
 *.cert
 *.crt

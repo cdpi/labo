@@ -6,6 +6,7 @@
 	"rootDir": "./src",
 	"outDir": "./js",
 	"esModuleInterop": false,
+	"allowSyntheticDefaultImports": true,
 	"moduleResolution": "node",
 	"forceConsistentCasingInFileNames": true,
 	"strict": true,

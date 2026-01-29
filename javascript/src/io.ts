@@ -1,5 +1,6 @@
 
 import { type Stats, readdir, readdirSync, readFileSync, statSync } from "node:fs";
+import { type FileHandle, open } from "node:fs/promises";
 import { join } from "node:path";
 
 type Options =
@@ -62,6 +63,31 @@ function getFilesRecursively(directory:string):Array<string>
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+async function readBytes(path:string, count:number):Promise<Buffer>
+	{
+	let file:FileHandle|null = null;
+
+	try
+		{
+		file = await open(path, "r");
+
+		const { buffer } = await file.read(Buffer.alloc(count), 0, count, 0);
+
+		return buffer;
+		}
+	//catch (error:any)
+	//throw new Error(`Erreur lors de la lecture du fichier : ${error.message}`);
+	finally
+		{
+		if (file)
+			{
+			await file.close();
+			}
+		}
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 type WalkFilesRecursivelyCallback = (path:string) => void;
 
 function walkFilesRecursively(directory:string, callback:WalkFilesRecursivelyCallback):void
@@ -110,6 +136,7 @@ export
 	FilesAndDirectories,
 	getFilesAndDirectories,
 	getFilesRecursively,
+	readBytes,
 	WalkFilesRecursivelyCallback,
 	walkFilesRecursively
 	};
