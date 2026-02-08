@@ -1,0 +1,16 @@
+{
+"connected-objects":
+	{
+	"neopixel":
+		[
+		],
+	"wiz":
+		[
+			{
+			"name": "LED Cuisine",
+			"ip": "172.22.22.95",
+			"port": 38899
+			}
+		]
+	}
+}
