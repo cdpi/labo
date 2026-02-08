@@ -1,0 +1,13 @@
+{
+"method": "getPilot",
+"env": "pro",
+"result":
+	{
+	"mac": "d8a011dd2061",
+	"rssi": -64,
+	"state": true,
+	"sceneId": 11,
+	"temp": 2700,
+	"dimming": 27
+	}
+}
