@@ -1,6 +1,6 @@
 
-import { type Stats, readdir, readdirSync, readFileSync, statSync } from "node:fs";
-import { type FileHandle, open } from "node:fs/promises";
+import { Stats, readdir, readdirSync, readFileSync, statSync, openSync, readSync, closeSync } from "node:fs";
+import { FileHandle, open } from "node:fs/promises";
 import { join } from "node:path";
 
 type Options =
@@ -63,6 +63,29 @@ function getFilesRecursively(directory:string):Array<string>
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+type ReadCallback<T> = (file:number) => T;
+
+function read<T>(path:string, callback:ReadCallback<T>):T
+	{
+	let file:number|null = null;
+
+	try
+		{
+		file = openSync(path, "r");
+
+		return callback(file);
+		}
+	finally
+		{
+		if (file !== null)
+			{
+			closeSync(file);
+			}
+		}
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 async function readBytes(path:string, count:number):Promise<Buffer>
 	{
 	let file:FileHandle|null = null;
@@ -84,6 +107,18 @@ async function readBytes(path:string, count:number):Promise<Buffer>
 			await file.close();
 			}
 		}
+	}
+
+function readBytes2(path:string, count:number):Buffer
+	{
+	return read(path, (file:number) =>
+		{
+		const buffer:Buffer = Buffer.alloc(count);
+
+		readSync(file, buffer, 0, count, 0);
+
+		return buffer;
+		});
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////

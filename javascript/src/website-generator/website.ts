@@ -1,0 +1,9 @@
+
+interface IWebSite
+	{
+	}
+
+export
+	{
+	IWebSite
+	};

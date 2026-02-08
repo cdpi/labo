@@ -8,8 +8,8 @@ je me suis donc amusé à faire un petit script pour télécharger les SVGs... e
 
 TODO: Investiger :-)
 
-J'ai plus galéré que prévu, Inkscape n'affiche pas correctement les polices de caractères en couleurs...
+J'ai galéré plus que prévu, Inkscape n'affiche pas correctement les polices de caractères en couleurs...
 
 TODO: Investiger aussi :-)
 
-Ensuite la convertion caractère émoji et hexa ne fonctionne pas toujours...
+Ensuite la convertion caractère émoji et hexa ne fonctionne pas bien

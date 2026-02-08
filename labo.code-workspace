@@ -1,0 +1,35 @@
+{
+"folders":
+	[
+		{
+		"path": "."
+		}
+	],
+"settings":
+	{
+	"editor.tokenColorCustomizations":
+		{
+		"*":
+			{
+			"textMateRules":
+				[
+					{
+					"scope": "entity.other.njk.delimiter.tag",
+					"settings":
+						{
+						"foreground": "#FF6B6B"
+						}
+					},
+
+					{
+					"scope": "entity.other.njk.delimiter.variable",
+					"settings":
+						{
+						"foreground": "#4ECDC4"
+						}
+					}
+				]
+			}
+		}
+	}
+}

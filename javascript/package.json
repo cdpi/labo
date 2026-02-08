@@ -1,17 +1,21 @@
 {
-"type": "module",
-"dependencies":
-    {
-    "adm-zip": "^0.5.16",
-    "class-transformer": "^0.5.1",
-    "fast-xml-parser": "^5.3.3",
-    "reflect-metadata": "^0.2.2",
-    "undici-types": "^7.16.0"
+    "type": "module",
+    "dependencies": {
+        "adm-zip": "^0.5.16",
+        "class-transformer": "^0.5.1",
+        "express": "^5.2.1",
+        "fast-xml-parser": "^5.3.3",
+        "jimp": "^1.6.0",
+        "mqtt": "^5.14.1",
+        "nunjucks": "^3.2.4",
+        "reflect-metadata": "^0.2.2",
+        "undici-types": "^7.16.0"
     },
-"devDependencies":
-    {
-    "@types/adm-zip": "^0.5.7",
-    "@types/node": "^25.0.10",
-    "typescript": "^5.9.3"
+    "devDependencies": {
+        "@types/adm-zip": "^0.5.7",
+        "@types/express": "^5.0.6",
+        "@types/node": "^25.2.0",
+        "@types/nunjucks": "^3.2.6",
+        "typescript": "^5.9.3"
     }
 }
