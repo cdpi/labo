@@ -1,0 +1,8 @@
+
+const Messages =
+	{
+	Home:
+		{
+		//On: ""
+		}
+	};

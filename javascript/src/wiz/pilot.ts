@@ -1,6 +1,13 @@
 
-import { IRGB } from "../util/color.js";
+//import { IRGB } from "../image/color.js";
 import { sendAndReceiveUDP4 } from "../network/udp.js";
+
+interface IRGB
+	{
+	readonly red:number;
+	readonly green:number;
+	readonly blue:number;
+	}
 
 async function sendAndReceive(ip:string, port:number, message:any):Promise<any>
 	{
