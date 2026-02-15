@@ -1,5 +1,5 @@
 
-import { getRandom } from "../util/random.js";
+import { getRandom } from "../random.js";
 import { TWOPI } from "./geometry.js";
 import { IPoint, Point } from "./point.js";
 

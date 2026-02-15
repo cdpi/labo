@@ -1,5 +1,5 @@
 
-import { chunk } from "../util/array.js";
+import { chunk } from "#util/array.js";
 import { hex, rgb8888rgb888 } from "./color.js";
 import { getPixelsFromFile } from "./image.js";
 

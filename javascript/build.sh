@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-rm -f -r js/*.js
+#rm -f -r js/*.js
 
 tsc
 
 for file in js/*.js; do
-	min=${file%.*}.min.js
+	#echo "$file"
+	#min=${file%.*}.min.js
 	#uglifyjs "$file" -o "$min" --compress --mangle
 	#uglifyjs "$file" -o "$min"
 done

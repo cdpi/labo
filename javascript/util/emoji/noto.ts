@@ -1,5 +1,5 @@
 
-import { getCodePoints, notVariationSelector16 } from "../util/unicode.js";
+import { getCodePoints, notVariationSelector16 } from "../unicode.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

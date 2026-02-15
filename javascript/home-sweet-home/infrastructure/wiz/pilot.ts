@@ -1,6 +1,6 @@
 
-//import { IRGB } from "../image/color.js";
-import { sendAndReceiveUDP4 } from "../network/udp.js";
+//import { sendAndReceiveUDP4 } from "../../../util/network/udp.js";
+import { sendAndReceiveUDP4 } from "#util/network/udp.js";
 
 interface IRGB
 	{

@@ -2,11 +2,11 @@
 //import { getFilesAndDirectories, getFilesRecursively } from "./io.js";
 //import { concat } from "./util/util.js";
 
-import { downloadNotoEmoji } from "../emoji/noto.js";
-import { toBezier } from "../geometry/line.js";
-import { IPoint, Point, pointsToString } from "../geometry/point.js";
-import { Modifier, Polygon, randomRadiusModifier, waveRadiusModifier } from "../geometry/polygon.js";
-import { CurveTo, MoveTo } from "../web/svg.js";
+import { downloadNotoEmoji } from "../util/emoji/noto.js";
+import { toBezier } from "../util/geometry/line.js";
+import { IPoint, Point, pointsToString } from "../util/geometry/point.js";
+import { Modifier, Polygon, randomRadiusModifier, waveRadiusModifier } from "../util/geometry/polygon.js";
+import { CurveTo, MoveTo } from "../util/svg.js";
 
 function devIO():void
 	{

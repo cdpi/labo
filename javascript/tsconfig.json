@@ -3,7 +3,7 @@
 	{
 	"target": "esnext",
 	"module": "esnext",
-	"rootDir": "./src",
+	"rootDir": ".",
 	"outDir": "./js",
 	"esModuleInterop": false,
 	"allowSyntheticDefaultImports": true,
@@ -14,6 +14,21 @@
 	"skipLibCheck": true,
 	"experimentalDecorators": true,
 	"emitDecoratorMetadata": true,
-	"strictPropertyInitialization": false
-	}
+	"strictPropertyInitialization": false,
+	"paths": {
+		"#util/*": ["./util/*"],
+		"#game/*": ["./game/*"],
+		"#home/*": ["./home-sweet-home/*"]
+		}
+	},
+"include":
+	[
+	"./dev/**/*",
+	"./game/**/*",
+	"./home-sweet-home/**/*",
+	"./image/**/*",
+	"./opendocument/**/*",
+	"./tools/**/*",
+	"./util/**/*",
+	]
 }

@@ -1,5 +1,22 @@
 {
+    "name": "cdpi",
+    "version": "0.0.1",
     "type": "module",
+    "imports":
+        {
+        "#util/*": {
+            "types": "./util/*",
+            "default": "./util/*"
+            },
+        "#game/*": {
+            "types": "./game/*",
+            "default": "./game/*"
+            },
+        "#home/*": {
+            "types": "./home-sweet-home/*",
+            "default": "./home-sweet-home/*"
+            }
+        },
     "dependencies": {
         "adm-zip": "^0.5.16",
         "class-transformer": "^0.5.1",

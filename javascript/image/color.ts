@@ -1,5 +1,5 @@
 
-import { pack565, pack888, swap, unpack888, unpack8888 } from "../util/byte.js"
+import { pack565, pack888, swap, unpack888, unpack8888 } from "#util/byte.js"
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
