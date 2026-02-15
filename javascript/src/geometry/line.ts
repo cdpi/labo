@@ -1,0 +1,24 @@
+
+import { IPoint, Point } from "./point.js";
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Line (un jour peut-être)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function toBezier(from:IPoint, to:IPoint, tension:number):Array<IPoint>
+	{
+	const dx:number = to.x - from.x;
+	const dy:number = to.y - from.y;
+
+	const controlPointFrom:IPoint = new Point(from.x + dx * tension, from.y);
+	const controlPointTo:IPoint = new Point(to.x - dy * tension, to.y);
+
+	return new Array<IPoint>(from, controlPointFrom, controlPointTo, to);
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export
+	{
+	toBezier
+	};

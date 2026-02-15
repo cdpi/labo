@@ -51,6 +51,26 @@ function rgb8888rgb888(color:number):number
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//type RGB = [number, number, number];
+//type RGBA = [number, number, number, number];
+
+type RGB =
+	{
+	red:number,
+	green:number,
+	blue:number
+	};
+
+type RGBA = RGB &
+	{
+	alpha:number
+	};
+
+const white:RGBA = { red: 255, green: 255, blue: 255, alpha: 255 };
+const black:RGB = { red: 0, green: 0, blue: 0 };
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /*
 interface IColor
 	{
@@ -81,8 +101,6 @@ class Color implements IColor
 		{
 		return 0;
 		}
-
-	//return `rgb(${color.red}, ${color.green}, ${color.blue})`;
 	}
 */
 
