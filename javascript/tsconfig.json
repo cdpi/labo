@@ -18,17 +18,21 @@
 	"paths": {
 		"#util/*": ["./util/*"],
 		"#game/*": ["./game/*"],
-		"#home/*": ["./home-sweet-home/*"]
+		"#home/*": ["./home-sweet-home/*"],
+		"#website-generator/*": ["./website-generator/*"]
 		}
 	},
 "include":
 	[
 	"./dev/**/*",
+	"./tests/**/*",
+
 	"./game/**/*",
 	"./home-sweet-home/**/*",
 	"./image/**/*",
 	"./opendocument/**/*",
 	"./tools/**/*",
 	"./util/**/*",
+	"./website-generator/**/*"
 	]
 }

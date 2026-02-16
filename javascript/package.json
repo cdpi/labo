@@ -4,18 +4,10 @@
     "type": "module",
     "imports":
         {
-        "#util/*": {
-            "types": "./util/*",
-            "default": "./util/*"
-            },
-        "#game/*": {
-            "types": "./game/*",
-            "default": "./game/*"
-            },
-        "#home/*": {
-            "types": "./home-sweet-home/*",
-            "default": "./home-sweet-home/*"
-            }
+        "#util/*": "./js/util/*",
+        "#game/*": "./js/game/*",
+        "#home/*": "./js/home-sweet-home/*",
+        "#website-generator/*": "./js/website-generator/*"
         },
     "dependencies": {
         "adm-zip": "^0.5.16",

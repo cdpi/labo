@@ -1,27 +1,27 @@
 
 import { readFileSync } from "node:fs";
 
-import { Configuration, WiZ } from "./configuration.js";
-import { setPilot } from "./infrastructure/wiz/pilot.js";
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const configuration = Configuration.parse(readFileSync("home.json", "utf-8"));
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Home
 	{
-	public constructor()
+	public readonly configuration:any;
+
+	public constructor(path:string)
 		{
+		this.configuration = JSON.parse(readFileSync(path, "utf-8"));
 		}
 
+	/*
 	public wizTurnOn():void
 		{
 		const lamp:WiZ = configuration.connectedObjects.wiz[0];
 
-		setPilot(lamp.ip, lamp.port, {red: 100, green: 50, blue: 100}, 60);
+		setPilot(lamp.ip, lamp.port, {red: 100, green: 50, blue: 100}, 60)
+			.then((response:any) => console.log(response))
+			.catch((error:any) => console.error(error));
 		}
+	*/
 
 	public watchDirectory():void
 		{

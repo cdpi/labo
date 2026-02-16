@@ -1,6 +1,17 @@
 
-//import { sendAndReceiveUDP4 } from "../../../util/network/udp.js";
 import { sendAndReceiveUDP4 } from "#util/network/udp.js";
+
+class Pilot
+	{
+	public constructor(ip:string, port:number)
+		{
+		}
+
+	private async sendAndReceive():Promise<any>
+		{
+		//return await sendAndReceive(this.ip, this.port, {method: "getPilot", params: {}});
+		}
+	}
 
 interface IRGB
 	{

@@ -18,39 +18,6 @@ function polygon(points:Array<IPoint>, fill:string = "none", stroke:string = "bl
 	return polygon;
 	}
 
-const pointToString = (point:IPoint):string => `${point.x} ${point.y}`;
-
-const MoveTo = (point:IPoint):string => `M${pointToString(point)}`;
-
-const CurveTo = (controlPointFrom:IPoint, controlPointTo:IPoint, to:IPoint):string =>
-	{
-	return `C${pointToString(controlPointFrom)}, ${pointToString(controlPointTo)}, ${pointToString(to)}`;
-	};
-
-type Type = "M" | "L" | "C" | "Q" | "Z";
-
-interface ICommand
-	{
-	type:Type;
-	points:Array<IPoint>;
-	}
-
-abstract class Command implements ICommand
-	{
-	abstract type:Type;
-	points:Array<IPoint>;
-
-	constructor(points:Array<IPoint>)
-		{
-		this.points = points;
-		}
-	}
-
-class _MoveTo extends Command
-	{
-	type:Type = "M";
-	}
-
 /*
 function getPolygons():void
 	{
@@ -71,7 +38,5 @@ function getPolygons():void
 
 export
 	{
-	polygon,
-	MoveTo,
-	CurveTo
+	polygon
 	};

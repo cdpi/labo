@@ -1,5 +1,6 @@
 
 import { IPoint, Point } from "./point.js";
+import { Curve } from "./curve.js";
 import { type Modifier, Polygon } from "./polygon.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -16,6 +17,8 @@ export
 
 	IPoint,
 	Point,
+
+	Curve,
 
 	Modifier,
 	Polygon

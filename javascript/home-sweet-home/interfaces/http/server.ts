@@ -1,14 +1,31 @@
-#!/usr/bin/env node
 
 import express from "express";
-//import mqtt from "mqtt";
 
+import { Home } from "#home/core/home.js";
 import { api } from "./api.js";
-//import { connect as connectToBroker } from "./broker.js";
 
-//const HOST = "localhost";
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//const broker:mqtt.MqttClient = await connectToBroker(HOST);
+class Server extends Home
+	{
+	public constructor()
+		{
+		super("home.json");
+		}
+
+	public run():void
+		{
+		}
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export
+	{
+	Server
+	};
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const app = express();
 
@@ -16,12 +33,14 @@ app.use(express.static("public"));
 
 app.use("/api", api);
 
+/*
 app.get("/broker", (request, response) =>
 	{
 	//broker.publish("test/topic", "Hello depuis JS");
 
 	response.send("HOME");
 	});
+*/
 
 /*
 app.get("/query", async (_request, response) =>

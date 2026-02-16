@@ -5,6 +5,10 @@ image-to-sketch/
 //led/
 
 temp/
+test/
+tests/
+
+.env
 
 *.cert
 *.crt

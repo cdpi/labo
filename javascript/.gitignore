@@ -3,4 +3,7 @@ node_modules/
 
 js/
 
-tests/
+
+# Temporaire
+
+src/
