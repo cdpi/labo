@@ -3,13 +3,11 @@
 
 interface IRenderer<T, R>
 	{
-	render():R;
 	render(model:T):R;
 	}
 
 abstract class Renderer<T, R> implements IRenderer<T, R>
 	{
-	abstract render():R;
 	abstract render(model:T):R;
 	}
 

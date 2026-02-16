@@ -17,13 +17,13 @@ class NunjucksRenderer extends Renderer<object, string>
 		this.template = template;
 		}
 
-	public render(model:object|null = null):string
+	public render(model:object):string
 		{
-		return this.template.render(model || {});
+		return this.template.render(model);
 		}
 	}
 
-class NunjucksEngine extends Engine<object, string>
+class NunjucksEngine extends Engine<object, string, string>
 	{
 	private readonly environment:nunjucks.Environment;
 
@@ -34,13 +34,8 @@ class NunjucksEngine extends Engine<object, string>
 		this.environment = nunjucks.configure(templatesDirectory, {autoescape: true, throwOnUndefined: true});
 		}
 
-	public getRenderer(template:string|null = null):IRenderer<object, string>
+	public getRenderer(template:string):IRenderer<object, string>
 		{
-		if (template === null)
-			{
-			throw new Error("TODO: renderer without template");
-			}
-
 		const tpl = this.environment.getTemplate(template);
 
 		return new NunjucksRenderer(tpl);

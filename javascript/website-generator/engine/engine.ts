@@ -3,16 +3,21 @@ import { IRenderer } from "#website-generator/engine/renderer.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-interface IEngine<T, R>
+interface IEngine<T, U, R>
 	{
-	getRenderer():IRenderer<T, R>;
-	getRenderer(template:string):IRenderer<T, R>;
+	getRenderer(options:U):IRenderer<T, R>;
+
+	render(options:U, model:T):R;
 	}
 
-abstract class Engine<T, R> implements IEngine<T, R>
+abstract class Engine<T, U, R> implements IEngine<T, U, R>
 	{
-	abstract getRenderer():IRenderer<T, R>;
-	abstract getRenderer(template:string):IRenderer<T, R>;
+	abstract getRenderer(options:U):IRenderer<T, R>;
+
+	public render(options:U, model:T):R
+		{
+		return this.getRenderer(options).render(model);
+		}
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
