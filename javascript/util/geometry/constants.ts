@@ -1,9 +1,9 @@
 
-import { getOffscreenCanvasFromImageBlob } from "./dom/canvas.js";
+const TWOPI = 2 * Math.PI;
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export
 	{
-	getOffscreenCanvasFromImageBlob
+	TWOPI
 	};

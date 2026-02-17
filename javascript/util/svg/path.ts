@@ -1,58 +1,9 @@
 
-import { Curve } from "#util/geometry/curve.js";
-import { IPoint } from "#util/geometry/point.js";
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Path
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const pointToString = (point:IPoint):string => `${point.x} ${point.y}`;
-
-const MoveTo = (point:IPoint):string => `M ${pointToString(point)}`;
-
-const CurveTo = (controlPointFrom:IPoint, controlPointTo:IPoint, to:IPoint):string =>
-	{
-	return `C ${pointToString(controlPointFrom)}, ${pointToString(controlPointTo)}, ${pointToString(to)}`;
-	};
+import { Curve, IPoint } from "../geometry.js";
+import { pointToString } from "./util.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// TODO: Dans geometry ou pas...
-
-function polygonToPath(points:Array<IPoint>, tension:number = 0.2):string
-	{
-	const commands:Array<string> = new Array<string>();
-
-	const n:number = points.length;
-
-	commands.push(MoveTo(points[0]));
-
-	for (let i = 0; i < n; i++)
-		{
-		const point1:IPoint = points[(i - 1 + n) % n];
-		const point2:IPoint = points[i];
-		const point3:IPoint = points[(i + 1) % n];
-		const point4:IPoint = points[(i + 2) % n];
-
-		const controlPoints:Array<IPoint> = Curve.getControlPoints(point1, point2, point3, point4, tension);
-
-		commands.push(CurveTo(controlPoints[0], controlPoints[1], point3));
-		}
-
-	commands.push("Z");
-
-	return commands.join(" ");
-	}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-class Path
-	{
-	}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/*
 type Type = "M" | "L" | "C" | "Q" | "Z";
 
 interface ICommand
@@ -75,12 +26,95 @@ abstract class Command implements ICommand
 class MoveTo extends Command
 	{
 	type:Type = "M";
+
+	public constructor(point:IPoint)
+		{
+		super(new Array<IPoint>(point));
+		}
+
+	public toString():string
+		{
+		return `${this.type} ${pointToString(this.points[0])}`;
+		}
 	}
-*/
+
+class CurveTo extends Command
+	{
+	type:Type = "C";
+
+	public constructor(controlPointFrom:IPoint, controlPointTo:IPoint, to:IPoint)
+		{
+		super(new Array<IPoint>(controlPointFrom, controlPointTo, to));
+		}
+
+	public toString():string
+		{
+		return `${this.type} ${pointToString(this.points[0])}, ${pointToString(this.points[1])}, ${pointToString(this.points[2])}`;
+		}
+	}
+
+class ClosePath extends Command
+	{
+	type:Type = "Z";
+
+	public constructor()
+		{
+		super(new Array<IPoint>());
+		}
+
+	public toString():string
+		{
+		return this.type;
+		}
+	}
+
+class Path
+	{
+	public static curved(points:Array<IPoint>, tension:number = 0.2)
+		{
+		const commands:Array<ICommand> = new Array<ICommand>();
+
+		const n:number = points.length;
+
+		commands.push(new MoveTo(points[0]));
+
+		for (let i = 0; i < n; i++)
+			{
+			const point1:IPoint = points[(i - 1 + n) % n];
+			const point2:IPoint = points[i];
+			const point3:IPoint = points[(i + 1) % n];
+			const point4:IPoint = points[(i + 2) % n];
+
+			const controlPoints:Array<IPoint> = Curve.getControlPoints(point1, point2, point3, point4, tension);
+
+			commands.push(new CurveTo(controlPoints[0], controlPoints[1], point3));
+			}
+
+		commands.push(new ClosePath());
+
+		return commands;
+		}
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function polygonToPath(points:Array<IPoint>, tension:number = 0.2):string
+	{
+	return Path.curved(points, tension).map(command => command.toString()).join(" ");
+	}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export
 	{
+	ICommand,
+	Command,
+
+	MoveTo,
+	CurveTo,
+	ClosePath,
+
+	Path,
+
 	polygonToPath
 	};

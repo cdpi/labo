@@ -1,13 +1,13 @@
 
 import { getRandom } from "../random.js";
-import { TWOPI } from "./geometry.js";
+import { TWOPI } from "./constants.js";
 import { IPoint, Point } from "./point.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-type Modifier = (radius:number, angle:number, index:number) => number;
+type RadiusModifier = (radius:number, angle:number, index:number) => number;
 
-function randomRadiusModifier(minimum:number, maximum:number):Modifier
+function randomRadiusModifier(minimum:number, maximum:number):RadiusModifier
 	{
 	return (r:number, angle:number, index:number) =>
 		{
@@ -15,7 +15,7 @@ function randomRadiusModifier(minimum:number, maximum:number):Modifier
 		};
 	}
 
-function waveRadiusModifier():Modifier
+function waveRadiusModifier():RadiusModifier
 	{
 	return (r:number, angle:number, index:number) =>
 		{
@@ -36,7 +36,7 @@ class Polygon
 		this.n = n;
 		}
 
-	public getVertices(cx:number, cy:number, r:number, modifier?:Modifier):Array<IPoint>
+	public getVertices(cx:number, cy:number, r:number, modifier:RadiusModifier|null = null):Array<IPoint>
 		{
 		const vertices:Array<IPoint> = new Array<IPoint>();
 
@@ -67,7 +67,7 @@ class Polygon
 
 export
 	{
-	Modifier,
+	RadiusModifier,
 	randomRadiusModifier,
 	waveRadiusModifier,
 	Polygon

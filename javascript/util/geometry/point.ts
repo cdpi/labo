@@ -17,26 +17,6 @@ class Point implements IPoint
 		this.x = x;
 		this.y = y;
 		}
-
-	// TODO: Pas ici car dépends des besoins: SVG,...
-	public static toString(point:IPoint):string
-		{
-		return `${point.x},${point.y}`;
-		}
-	}
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/*
-function pointToString(point:IPoint):string
-	{
-	return `${point.x},${point.y}`;
-	}
-*/
-
-function pointsToString(points:Array<IPoint>):string
-	{
-	return points.map(Point.toString).join(" ");
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,6 +24,5 @@ function pointsToString(points:Array<IPoint>):string
 export
 	{
 	IPoint,
-	Point,
-	pointsToString
+	Point
 	};

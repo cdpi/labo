@@ -4,9 +4,9 @@
     "type": "module",
     "imports":
         {
-        "#util/*": "./js/util/*",
         "#game/*": "./js/game/*",
         "#home/*": "./js/home-sweet-home/*",
+        "#util/*": "./js/util/*",
         "#website-generator/*": "./js/website-generator/*"
         },
     "dependencies": {

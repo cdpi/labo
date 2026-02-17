@@ -1,14 +1,11 @@
 
-import { IPoint, Point } from "./point.js";
-import { Curve } from "./curve.js";
-import { type Modifier, Polygon } from "./polygon.js";
+import { TWOPI } from "./geometry/constants.js";
+import { IPoint, Point } from "./geometry/point.js";
+import { Curve } from "./geometry/curve.js";
+import { type RadiusModifier, Polygon } from "./geometry/polygon.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Geometry
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const TWOPI = 2 * Math.PI;
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export
@@ -20,6 +17,6 @@ export
 
 	Curve,
 
-	Modifier,
+	RadiusModifier,
 	Polygon
 	};

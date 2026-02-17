@@ -16,9 +16,9 @@
 	"emitDecoratorMetadata": true,
 	"strictPropertyInitialization": false,
 	"paths": {
-		"#util/*": ["./util/*"],
 		"#game/*": ["./game/*"],
 		"#home/*": ["./home-sweet-home/*"],
+		"#util/*": ["./util/*"],
 		"#website-generator/*": ["./website-generator/*"]
 		}
 	},
@@ -30,6 +30,7 @@
 	"./game/**/*",
 	"./home-sweet-home/**/*",
 	"./image/**/*",
+	"./image2sketch/**/*",
 	"./opendocument/**/*",
 	"./tools/**/*",
 	"./util/**/*",

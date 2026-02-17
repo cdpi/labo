@@ -1,12 +1,12 @@
 
-import { getCodePoints, notVariationSelector16 } from "../unicode.js";
+import { getCodePoints, notEmojiVariationSelector } from "../unicode.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function getNotoEmojiName(emoji:string):string
 	{
 	return "emoji_u" + getCodePoints(emoji)
-		.filter(notVariationSelector16)
+		.filter(notEmojiVariationSelector)
 		.map((code:number) => code.toString(16))
 		.join("_");
 	}
