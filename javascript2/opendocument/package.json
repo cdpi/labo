@@ -1,0 +1,17 @@
+{
+    "name": "cdpi-opendocument",
+    "version": "0.0.1",
+    "type": "module",
+    "dependencies": {
+        "adm-zip": "^0.5.16",
+        "class-transformer": "^0.5.1",
+        "fast-xml-parser": "^5.3.3",
+        "reflect-metadata": "^0.2.2",
+        "undici-types": "^7.16.0"
+    },
+    "devDependencies": {
+        "@types/adm-zip": "^0.5.7",
+        "@types/node": "^25.2.0",
+        "typescript": "^5.9.3"
+    }
+}
