@@ -1,7 +1,7 @@
 
 import { Bitmap, Jimp } from "jimp";
 
-import { getPixelsFromBitmap } from "../../../image/image.js";
+import { getPixelsFromBitmap } from "#nodeimage/image.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

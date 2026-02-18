@@ -16,24 +16,28 @@
 	"emitDecoratorMetadata": true,
 	"strictPropertyInitialization": false,
 	"paths": {
-		"#game/*": ["./game/*"],
-		"#home/*": ["./home-sweet-home/*"],
-		"#util/*": ["./util/*"],
-		"#website-generator/*": ["./website-generator/*"]
+		"#game/*": ["./common/game/*"],
+		"#geometry/*": ["./common/geometry/*"],
+		"#image/*": ["./common/image/*"],
+		"#util/*": ["./common/util/*"],
+
+		"#browser/*": ["./browser/*"],
+
+		"#cdpi/network/*": ["./node/network/*"],
+		"#nodeimage/*": ["./node/image/*"]
 		}
 	},
 "include":
 	[
+	"./common/**/*",
+	"./browser/**/*",
+	"./node/**/*",
+
+	"./games/**/*",
+	"./home-sweet-home/**/*",
+
 	"./dev/**/*",
 	"./tests/**/*",
-
-	"./game/**/*",
-	"./home-sweet-home/**/*",
-	"./image/**/*",
-	"./image2sketch/**/*",
-	"./opendocument/**/*",
-	"./tools/**/*",
-	"./util/**/*",
-	"./website-generator/**/*"
+	"./tools/**/*"
 	]
 }

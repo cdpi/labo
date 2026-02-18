@@ -1,5 +1,5 @@
 
-import { setPilot } from "#home/infrastructure/wiz/pilot.js";
+import { setPilot } from "../../infrastructure/wiz/pilot.js";
 import { Device } from "./device.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////

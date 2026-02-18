@@ -2,11 +2,11 @@
 //import { getFilesAndDirectories, getFilesRecursively } from "./io.js";
 //import { concat } from "./util/util.js";
 
-import { downloadNotoEmoji } from "#util/emoji/noto.js";
-import { IPoint } from "#util/geometry/point.js";
-import { type RadiusModifier, Polygon, randomRadiusModifier, waveRadiusModifier } from "#util/geometry/polygon.js";
-import { pointsToString } from "#util/svg/util.js";
-import { polygonToPath } from "#util/svg/path.js";
+import { downloadNotoEmoji } from "#util/emoji.js";
+import { IPoint } from "#geometry/point.js";
+import { type RadiusModifier, Polygon, getRandomRadiusModifier, getWaveRadiusModifier } from "#geometry/polygon.js";
+//import { pointsToString } from "#util/svg/util.js";
+//import { polygonToPath } from "#util/svg/path.js";
 
 //import { svgIsland } from "./svg-island.js";
 import { WorkInProgress } from "./decorators.js";
@@ -19,6 +19,7 @@ function devIO():void
 	//console.log(getFilesRecursively(directory));
 	}
 
+/*
 function devEmoji():void
 	{
 	downloadNotoEmoji("🙋🏻‍♂️").then((svg:string) =>
@@ -26,7 +27,9 @@ function devEmoji():void
 		console.log(svg);
 		});
 	}
+*/
 
+/*
 function devSVGsssss():void
 	{
 	const polygon:Polygon = new Polygon(120);
@@ -50,6 +53,7 @@ function devSVGsssss():void
 
 	console.log(svg);
 	}
+*/
 
 //<path d="M10 10 C 20 20, 40 20, 50 10" stroke="black" fill="transparent"/>
 
@@ -65,4 +69,3 @@ function devBezier():void
 	console.log(svg);
 	}
 */
-

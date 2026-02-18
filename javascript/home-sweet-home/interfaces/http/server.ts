@@ -1,7 +1,7 @@
 
 import express from "express";
 
-import { Home } from "#home/core/home.js";
+import { Home } from "../../core/home.js";
 import { api } from "./api.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////

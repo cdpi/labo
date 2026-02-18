@@ -1,7 +1,7 @@
 
 import { argv } from "node:process";
 
-import { DeviceManager } from "#home/core/services/device-manager.js";
+import { DeviceManager } from "../../core/services/device-manager.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

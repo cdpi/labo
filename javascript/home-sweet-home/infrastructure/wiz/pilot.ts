@@ -1,5 +1,5 @@
 
-import { sendAndReceiveUDP4 } from "#util/network/udp.js";
+import { sendAndReceiveUDP4 } from "#cdpi/network/udp.js";
 
 class Pilot
 	{

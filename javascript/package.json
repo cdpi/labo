@@ -4,10 +4,15 @@
     "type": "module",
     "imports":
         {
-        "#game/*": "./js/game/*",
-        "#home/*": "./js/home-sweet-home/*",
-        "#util/*": "./js/util/*",
-        "#website-generator/*": "./js/website-generator/*"
+        "#game/*": "./js/common/game/*",
+        "#geometry/*": "./js/common/geometry/*",
+		"#image/*": "./js/common/image/*",
+		"#util/*": "./js/common/util/*",
+
+        "#common/*": "./js/common/*",
+
+        "#cdpi/network/*": "./js/node/network/*",
+        "#nodeimage/*": "./js/node/image/*"
         },
     "dependencies": {
         "adm-zip": "^0.5.16",
