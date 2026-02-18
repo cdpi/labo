@@ -16,10 +16,10 @@
 	"emitDecoratorMetadata": true,
 	"strictPropertyInitialization": false,
 	"paths": {
-		"#game/*": ["./common/game/*"],
-		"#geometry/*": ["./common/geometry/*"],
-		"#image/*": ["./common/image/*"],
-		"#util/*": ["./common/util/*"],
+		"#game/*": ["../javascript2/common/src/game/*"],
+		"#geometry/*": ["../javascript2/common/src/geometry/*"],
+		"#image/*": ["../javascript2/common/src/image/*"],
+		"#util/*": ["../javascript2/common/src/util/*"],
 
 		"#browser/*": ["./browser/*"],
 
@@ -29,7 +29,6 @@
 	},
 "include":
 	[
-	"./common/**/*",
 	"./browser/**/*",
 	"./node/**/*",
 

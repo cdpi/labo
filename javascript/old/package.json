@@ -4,12 +4,12 @@
     "type": "module",
     "imports":
         {
-        "#game/*": "./js/common/game/*",
-        "#geometry/*": "./js/common/geometry/*",
-		"#image/*": "./js/common/image/*",
-		"#util/*": "./js/common/util/*",
+        "#game/*": "../javascript2/common/js/game/*",
+        "#geometry/*": "../javascript2/common/js/geometry/*",
+		"#image/*": "../javascript2/common/js/image/*",
+		"#util/*": "../javascript2/common/js/util/*",
 
-        "#common/*": "./js/common/*",
+        "#common/*": "../javascript2/common/js/*",
 
         "#cdpi/network/*": "./js/node/network/*",
         "#nodeimage/*": "./js/node/image/*"

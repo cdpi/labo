@@ -1,4 +1,0 @@
-
-# Mécanique
-
-Mécanisme du jeu
