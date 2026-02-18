@@ -8,7 +8,7 @@ import { type RadiusModifier, Polygon, randomRadiusModifier, waveRadiusModifier 
 import { pointsToString } from "#util/svg/util.js";
 import { polygonToPath } from "#util/svg/path.js";
 
-import { svgIsland } from "./svg-island.js";
+//import { svgIsland } from "./svg-island.js";
 import { WorkInProgress } from "./decorators.js";
 
 function devIO():void
@@ -65,6 +65,4 @@ function devBezier():void
 	console.log(svg);
 	}
 */
-
-svgIsland();
 
