@@ -5,7 +5,7 @@ import { Expose } from "class-transformer";
 class Style
 	{
 	@Expose({ name: "@_style:name" })
-	name:string;
+	name?:string;
 	};
 
 export

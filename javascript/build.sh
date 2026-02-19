@@ -10,6 +10,14 @@ cd browser
 npm run build
 cd ..
 
+cd nonode
+npm run build
+cd ..
+
+cd opendocument
+tsc
+cd ..
+
 cd treasure-island
 npm run build
 cd ..

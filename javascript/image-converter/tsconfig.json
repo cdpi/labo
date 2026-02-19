@@ -7,6 +7,8 @@
 	"outDir": "./dist",
 	"baseUrl": ".",
 	"paths": {
+		"common/*": ["node_modules/@cdpi/common/dist/*"],
+		"@cdpi/node/*": ["node_modules/@cdpi/node/dist/*"]
 	},
 	"esModuleInterop": false,
 	"allowSyntheticDefaultImports": true,

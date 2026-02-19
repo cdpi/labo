@@ -10,7 +10,7 @@ class DocumentContent
 	{
 	@Expose({ name: "@_office:version" })
 	@Type(() => Number)
-	version:number;
+	version?:number;
 
 	@Expose({ name: "office:font-face-decls" })
 	@Type(() => FontFaceDecls)
@@ -22,7 +22,7 @@ class DocumentContent
 
 	@Expose({ name: "office:body" })
 	@Type(() => Body)
-	body:Body;
+	body?:Body;
 	}
 
 export

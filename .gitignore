@@ -1,14 +1,12 @@
 
-//led/
-
 temp/
 test/
 tests/
-
-.env
 
 *.cert
 *.crt
 *.key
 *.pem
 *.zip
+
+.env

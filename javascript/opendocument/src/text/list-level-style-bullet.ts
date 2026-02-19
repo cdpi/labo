@@ -6,16 +6,16 @@ class ListLevelStyleBullet
 	{
 	@Expose({ name: "@_text:level" })
 	@Type(() => Number)
-	level:number;
+	level?:number;
 
 	@Expose({ name: "@_text:style-name" })
-	styleName:string;
+	styleName?:string;
 
 	//@Expose({ name: "@_style:num-suffix" })
 	//suffix:string;
 
 	@Expose({ name: "@_text:bullet-char" })
-	bullet:string;
+	bullet?:string;
 	};
 
 export

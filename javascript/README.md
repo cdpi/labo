@@ -6,11 +6,12 @@ Supprimer dossier dev et utiliser branches !!!
 
 - browser
 - common
-- treasure-island (mais normal tout mis en commentaire) :/
+- nonode
+- opendocument
+- treasure-island
 
 ### tsc à tester
 
-- opendocument
 - website-generator (mais il ne génère rien...)
 
 ### tsc ne fonctionne pas

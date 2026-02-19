@@ -8,7 +8,7 @@ class AutomaticStyles
 	{
 	@Expose({ name: "text:list-style" })
 	@Type(() => ListStyle)
-	listStyle:ListStyle;
+	listStyle?:ListStyle;
 	};
 
 export

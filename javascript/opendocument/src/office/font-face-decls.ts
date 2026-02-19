@@ -8,7 +8,7 @@ class FontFaceDecls
 	{
 	@Expose({ name: "style:font-face" })
 	@Type(() => FontFace)
-	font:FontFace;
+	font?:FontFace;
 	}
 
 export
