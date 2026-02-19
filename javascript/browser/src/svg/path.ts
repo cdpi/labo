@@ -1,4 +1,6 @@
 
+import { IPoint as sdsd } from "common/geometry/point.js";
+
 import { IPoint, Curve } from "common/geometry";
 import { pointToString } from "./util.js";
 
