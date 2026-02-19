@@ -51,8 +51,8 @@ class Polygon
 				newRadius = modifier(newRadius, angle, i);
 				}
 
-			const x = cx + Math.cos(angle) * radius;
-			const y = cy + Math.sin(angle) * radius;
+			const x = cx + Math.cos(angle) * newRadius;
+			const y = cy + Math.sin(angle) * newRadius;
 
 			vertices.push(new Point(x, y));
 			}

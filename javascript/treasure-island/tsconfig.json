@@ -4,7 +4,13 @@
 	"target": "esnext",
 	"module": "esnext",
 	"rootDir": "./src",
-	"outDir": "./js",
+	"outDir": "./dist",
+	"baseUrl": ".",
+	"paths": {
+		"common/*": ["node_modules/@cdpi/common/dist/*"],
+		"browser/*": ["node_modules/@cdpi/browser/dist/*"]
+	},
+	"declaration": true,
 	"esModuleInterop": false,
 	"allowSyntheticDefaultImports": true,
 	"lib": ["DOM", "ESNext"],
@@ -14,6 +20,6 @@
 	"skipLibCheck": true,
 	"experimentalDecorators": true,
 	"emitDecoratorMetadata": true,
-	"strictPropertyInitialization": false,
+	"strictPropertyInitialization": true
 	}
 }

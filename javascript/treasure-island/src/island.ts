@@ -1,10 +1,25 @@
 
-import { IPoint } from "#common/geometry/point.js";
-import { Polygon, getRandomRadiusModifier } from "#common/geometry/polygon.js";
-//import { polygonToPath } from "#geometry/polygon.js";
-//import { pointsToString } from "#util/svg/util.js";
+import { IPoint } from "common/geometry/point.js";
+import { Polygon, getRandomRadiusModifier } from "common/geometry/polygon.js";
+import { pointsToString } from "browser/svg/util.js";
+import { polygonToPath } from "browser/svg/path.js";
+import { getFilterForPirateIsland } from "browser/svg/filter.js";
 
-//import { getFilterForPirateIsland } from "../../util/svg/filter.js";
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Tile
+	{
+	public constructor()
+		{
+		}
+	}
+
+class Island
+	{
+	public constructor()
+		{
+		}
+	}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -97,5 +112,8 @@ function newIsland(width:number, height:number, count:number = DEFAULT_COUNT, sc
 
 export
 	{
+	Tile,
+	Island,
+
 	newIsland
 	};

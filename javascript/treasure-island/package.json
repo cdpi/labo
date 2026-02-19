@@ -1,7 +1,13 @@
 {
-    "name": "cdpi-island",
+    "name": "@cdpi/treasure-island",
     "version": "0.0.1",
     "type": "module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc --watch"
+    },
     "dependencies": {
         "class-transformer": "^0.5.1",
         "reflect-metadata": "^0.2.2",

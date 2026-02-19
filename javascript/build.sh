@@ -10,6 +10,10 @@ cd browser
 npm run build
 cd ..
 
+cd treasure-island
+npm run build
+cd ..
+
 #tsc
 
 #for file in js/*.js; do

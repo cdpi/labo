@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+	<title>@cdpi/treasure-island</title>
+</head>
+<body>
+
+<h1>@cdpi/treasure-island</h1>
+
+<script type="importmap">
+{
+"imports":
+	{
+	"common/": "../node_modules/@cdpi/common/dist/",
+	"browser/": "../node_modules/@cdpi/browser/dist/"
+	}
+}
+</script>
+
+<script type="module">
+
+import { TreasureIsland } from "../dist/game.js";
+import { newIsland } from "../dist/island.js";
+
+const ti = new TreasureIsland();
+
+console.log(ti);
+
+// newIsland(width:number, height:number, count:number = DEFAULT_COUNT, scale:number = DEFAULT_SCALE, smoothness:number = DEFAULT_SMOOTHNESS, showOriginalPolygon:boolean = false):string
+const svg = newIsland(window.innerWidth, window.innerHeight, 20, 80, 0.3, true);
+
+console.log(svg);
+
+document.body.innerHTML = svg;
+
+</script>
+
+</body>
+</html>
