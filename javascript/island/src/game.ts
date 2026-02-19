@@ -1,5 +1,4 @@
 
-/*
 import { newIsland } from "./island.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -11,4 +10,3 @@ const SCALE:number = 80;
 const SMOOTHNESS:number = 0.125;
 
 window.document.body.innerHTML = newIsland(window.innerWidth, window.innerHeight, COUNT, SCALE, SMOOTHNESS, DEBUG);
-*/

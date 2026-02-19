@@ -1,6 +1,6 @@
 
-import { IPoint } from "#geometry/point.js";
-import { Polygon, getRandomRadiusModifier } from "#geometry/polygon.js";
+import { IPoint } from "#common/geometry/point.js";
+import { Polygon, getRandomRadiusModifier } from "#common/geometry/polygon.js";
 //import { polygonToPath } from "#geometry/polygon.js";
 //import { pointsToString } from "#util/svg/util.js";
 
@@ -24,7 +24,6 @@ Accent / ombre : #CFC1A6 ou #BFA78A.
 Souhaitez-vous un ensemble CSS (variables) ou une palette exportable (ASE/JSON) ?
 */
 
-/*
 function newIslandGetPolygonPoints(size:number, count:number):Array<IPoint>
 	{
 	const radius:number = Math.floor(size * 0.75);
@@ -100,4 +99,3 @@ export
 	{
 	newIsland
 	};
-*/

@@ -1,6 +1,5 @@
 
-import { IPoint } from "../../common/geometry/point.js";
-import { Curve } from "../../common/geometry/curve.js";
+import { IPoint, Curve } from "common/geometry";
 import { pointToString } from "./util.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,15 +1,14 @@
 {
-    "name": "cdpi-common",
+    "name": "cdpi-browser",
     "version": "0.0.1",
     "type": "module",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "exports": {
         ".": "./dist/index.js",
-        "./game": "./dist/game/index.js",
-        "./geometry": "./dist/geometry/index.js",
-        "./image": "./dist/image/index.js",
-        "./util": "./dist/util/index.js"
+        "./css": "./dist/css/index.js",
+        "./dom": "./dist/dom/index.js",
+        "./svg": "./dist/svg/index.js"
     },
     "scripts": {
         "build": "tsc",

@@ -20,3 +20,7 @@ window.addEventListener("deviceorientation", (event:DeviceOrientationEvent) =>
 		}
 	});
 */
+
+export
+	{
+	};
