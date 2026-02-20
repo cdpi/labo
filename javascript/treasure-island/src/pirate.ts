@@ -1,7 +1,10 @@
 
+import { Model } from "./mvc.js";
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class Game
+@Model
+class Pirate
 	{
 	public constructor()
 		{
@@ -12,5 +15,5 @@ class Game
 
 export
 	{
-	Game
+	Pirate
 	};

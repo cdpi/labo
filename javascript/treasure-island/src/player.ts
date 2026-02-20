@@ -1,9 +1,35 @@
 
+import { Controller } from "./mvc.js";
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class Pirate
+interface IAction
+	{
+	}
+
+interface IMove extends IAction
+	{
+	}
+
+interface IDig extends IAction
+	{
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@Controller
+class Player
 	{
 	public constructor()
+		{
+		//const p:Pirate = new Pirate();
+		}
+
+	public move():void
+		{
+		}
+
+	public dig():void
 		{
 		}
 	}
@@ -12,5 +38,7 @@ class Pirate
 
 export
 	{
-	Pirate
+	IAction,
+
+	Player
 	};

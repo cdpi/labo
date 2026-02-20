@@ -1,10 +1,22 @@
 
+import { Model } from "./mvc.js";
+
+import { IPoint } from "common/geometry/point.js";
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class Game
+@Model
+class Tile
 	{
-	public constructor()
+	private dug:boolean = false;
+
+	public constructor(private readonly position:IPoint)
 		{
+		}
+
+	public get isDug():boolean
+		{
+		return this.dug;
 		}
 	}
 
@@ -12,5 +24,5 @@ class Game
 
 export
 	{
-	Game
+	Tile
 	};
