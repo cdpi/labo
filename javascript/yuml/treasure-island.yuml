@@ -1,0 +1,26 @@
+// {type:class}
+
+// Model
+
+[Island{bg:peachpuff}]
+[Tile{bg:peachpuff}]
+[Treasure{bg:peachpuff}]
+[Pirate{bg:peachpuff}]
+
+[Island]->[Tile]
+[Tile]->[Pirate]
+[Tile]->[Treasure]
+
+// View
+
+[SVG{bg:paleturquoise}]
+
+// Controller
+
+[TreasureIsland{bg:palegreen}]
+[Player{bg:palegreen}]
+
+[TreasureIsland]-[Player]
+
+[TreasureIsland]-[Island]
+[Player]->[Pirate]
