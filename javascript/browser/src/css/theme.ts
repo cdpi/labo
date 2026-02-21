@@ -14,30 +14,6 @@ function getActiveStyleSheet():string|null
 	return link ? link.title : null;
 	}
 
-/*
-function setActiveStyleSheet(title:string):void
-	{
-	const links:NodeListOf<HTMLLinkElement> = document.querySelectorAll<HTMLLinkElement>("link[rel*='style']");
-
-	links.forEach((link:HTMLLinkElement) =>
-		{
-		if (link.title)
-			{
-			link.disabled = (link.title !== title);
-			}
-		});
-	}
-*/
-
-/*
-function setActiveStyleSheet(title:string):void
-	{
-	const links:NodeListOf<HTMLLinkElement> = document.querySelectorAll<HTMLLinkElement>(THEME_SELECTOR);
-
-	links.forEach((link:HTMLLinkElement) => link.disabled = link.title !== title);
-	}
-*/
-
 function setActiveStyleSheet(title:string):void
 	{
 	document.querySelectorAll<HTMLLinkElement>(THEME_SELECTOR)
@@ -46,7 +22,7 @@ function setActiveStyleSheet(title:string):void
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-abstract class ThemeObserver
+abstract class Observer
 	{
 	protected readonly darkMode:MediaQueryList;
 
@@ -57,6 +33,8 @@ abstract class ThemeObserver
 		this.init();
 		}
 
+	// OK onSystemThemeChange fonctionne
+	//console.log(`DarkMode: ${isDark}`);
 	protected abstract onSystemThemeChange(isDark:boolean):void;
 
 	private init():void
@@ -65,7 +43,8 @@ abstract class ThemeObserver
 		}
 	}
 
-class ThemeManager extends ThemeObserver
+// OK themes et activeTheme fonctionnent
+class Manager extends Observer
 	{
 	public constructor()
 		{
@@ -106,6 +85,6 @@ export
 	getActiveStyleSheet,
 	setActiveStyleSheet,
 
-	ThemeObserver,
-	ThemeManager
+	Observer,
+	Manager
 	};

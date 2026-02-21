@@ -7,10 +7,10 @@
 	"outDir": "./dist",
 	"baseUrl": ".",
 	"paths": {
-		"common/*": ["node_modules/@cdpi/common/dist/*"],
-		"browser/*": ["node_modules/@cdpi/browser/dist/*"],
-
-		"@cdpi/css/*": ["node_modules/@cdpi/browser/dist/css/*"]
+		"@cdpi/binding/*": ["node_modules/@cdpi/common/dist/binding/*"],
+		"@cdpi/geometry/*": ["node_modules/@cdpi/common/dist/geometry/*"],
+		"@cdpi/css/*": ["node_modules/@cdpi/browser/dist/css/*"],
+		"@cdpi/svg/*": ["node_modules/@cdpi/browser/dist/svg/*"]
 	},
 	"declaration": true,
 	"esModuleInterop": false,

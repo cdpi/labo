@@ -1,9 +1,9 @@
 
-import { IPoint } from "common/geometry/point.js";
-import { Polygon, getRandomRadiusModifier } from "common/geometry/polygon.js";
-import { pointsToString } from "browser/svg/util.js";
-import { polygonToPath } from "browser/svg/path.js";
-import { getFilterForPirateIsland } from "browser/svg/filter.js";
+import { IPoint } from "@cdpi/geometry/point.js";
+import { Polygon, getRandomRadiusModifier } from "@cdpi/geometry/polygon.js";
+import { pointsToString } from "@cdpi/svg/util.js";
+import { polygonToPath } from "@cdpi/svg/path.js";
+import { getFilterForPirateIsland } from "@cdpi/svg/filter.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

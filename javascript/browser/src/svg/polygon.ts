@@ -1,5 +1,5 @@
 
-import { IPoint } from "common/geometry/point.js";
+import { IPoint } from "@cdpi/geometry/point.js";
 import { NAMESPACE } from "./constants.js";
 import { pointsToString } from "./util.js";
 

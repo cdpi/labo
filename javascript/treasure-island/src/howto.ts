@@ -1,34 +1,28 @@
 
-import { ThemeManager, setActiveStyleSheet } from "@cdpi/css/theme.js";
+import { Manager as ThemeManager } from "@cdpi/css/theme.js";
+
+import { Manager as BindingManager } from "@cdpi/binding/manager.js";
+import { Factory as BindingFactory } from "@cdpi/binding/factory.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*
-import { HowTo } from "@howto/howto.js";
-
-const howto = new HowTo();
-
-console.log(howto.themes);
-console.log(howto.activeTheme);
-
-howto.activeTheme = "Sombre";
-
-console.log(howto.activeTheme);
-*/
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-class HowTo extends ThemeManager
+type State =
 	{
-	// OK themes et activeTheme fonctionnent
+	n:number;
+	};
 
-	/*
-	protected onSystemThemeChange(isDark:boolean):void
+class HowTo
+	{
+	private readonly ui:BindingManager;
+	private readonly state:BindingFactory<State>;
+	private readonly theme:ThemeManager;
+
+	public constructor()
 		{
-		// OK onSystemThemeChange fonctionne
-		console.log(`DarkMode: ${isDark}`);
+		this.ui = new BindingManager();
+		this.state = new BindingFactory<State>();
+		this.theme = new ThemeManager();
 		}
-	*/
 	}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
