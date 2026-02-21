@@ -1,65 +1,7 @@
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-type SVGFEFilter = SVGFEDisplacementMapElement | SVGFEMorphologyElement | SVGFETurbulenceElement;
-
-const b = <T extends SVGFEFilter>(target:T):T =>
-	{
-	const proxy:T = new Proxy<T>(target, setterHandler("data-binding"));
-
-	inputHandler(proxy, "data-binding");
-
-	return proxy;
-	};
-
-/*
-b<SVGFEDisplacementMapElement>(document.querySelector("feDisplacementMap")!);
-b<SVGFEMorphologyElement>(document.querySelector("feMorphology")!);
-b<SVGFETurbulenceElement>(document.querySelector("feTurbulence")!);
-b<SVGFETileElement>(document.querySelector("feTurbulence")!);
-*/
-
-const bindInputToAttribute = <T extends Element>(input:HTMLInputElement, target:T, attributeName:string) =>
-	{
-	input.addEventListener("input", () => target.setAttribute(attributeName, input.value));
-	};
-
-const bindMorphologyAttribute = (target:SVGFEMorphologyElement, attributeName:string) =>
-	{
-	// readonly in1: SVGAnimatedString;
-	//readonly operator: SVGAnimatedEnumeration;
-	//readonly radiusX: SVGAnimatedNumber;
-	//readonly radiusY: SVGAnimatedNumber;
-	};
+import { setterHandler } from "common/util/proxy.js";
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const setterHandler = <T extends object>(attributeName:string):ProxyHandler<T> =>
-	{
-	const handler:ProxyHandler<T> =
-		{
-		set(object:T, property:string|symbol, value:any):boolean
-			{
-			object[property as keyof T] = value;
-
-			document.querySelectorAll(`[${attributeName}="${String(property)}"]`).forEach((element:Element) =>
-				{
-				if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement)
-					{
-					element.value = String(value);
-					}
-				else
-					{
-					element.textContent = String(value);
-					}
-				});
-
-			return true;
-			}
-		};
-
-	return handler;
-	};
 
 const inputHandler = <T extends object>(proxy:T, attributeName:string):void =>
 	{
@@ -84,7 +26,22 @@ const inputHandler = <T extends object>(proxy:T, attributeName:string):void =>
 
 function createTwoWayBinding<T extends object>(target:T, attributeName:string):T
 	{
-	const proxy:T = new Proxy<T>(target, setterHandler(attributeName));
+	const setter:ProxyHandler<T> = setterHandler((property:string, value:any) =>
+		{
+		document.querySelectorAll(`[${attributeName}="${property}"]`).forEach((element:Element) =>
+			{
+			if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement)
+				{
+				element.value = String(value);
+				}
+			else
+				{
+				element.textContent = String(value);
+				}
+			});
+		});
+
+	const proxy:T = new Proxy<T>(target, setter);
 
 	inputHandler(proxy, attributeName);
 

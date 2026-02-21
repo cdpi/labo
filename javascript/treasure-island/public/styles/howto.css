@@ -1,0 +1,38 @@
+
+:root
+	{
+	--howto-water-color: lightblue;
+	--howto-island-color: brown;
+
+	--howto-octaves: 2;
+	}
+
+body
+	{
+	background-color: var(--howto-primary-color);
+
+	color: black;
+	background-color: white;
+	transition: all 0.3s linear;
+	}
+
+svg
+	{
+	width: 200px;
+	height: 200px;
+	vertical-align: bottom;
+	display: inline-block;
+	transition: all 1s linear;
+	}
+
+svg.aaa
+	{
+	--howto-water-color: blue;
+	--howto-octaves: 23;
+	/*
+	fill: blue;
+	stroke: black;
+	stroke-width: 3px;
+	*/
+	transition: all 1s linear;
+	}

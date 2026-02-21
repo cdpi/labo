@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+	<title>@cdpi/treasure-island</title>
+<link rel="stylesheet" href="styles/light.css" title="Clair">
+<link rel="stylesheet alternate" href="styles/dark.css" title="Sombre">
+<link rel="stylesheet" href="styles/howto.css">
+</head>
+<body>
+
+<h1>@cdpi/treasure-island</h1>
+
+<button id="light-theme">Clair</button>
+<button id="dark-theme">Sombre</button>
+
+<svg>
+	<use href="images/howto.svg#water" />
+	<use href="images/howto.svg#island" />
+</svg>
+
+<svg>
+	<use href="images/howto.svg#water" />
+	<use href="images/howto.svg#island" filter="url(images/howto.svg#dilate)" />
+</svg>
+
+<button id="howto-water-color">Mer</button>
+
+<!--
+<span style="display: flex; width: 100px;">
+	<button>-</button>
+	<input>
+	<button>+</button>
+</span>
+-->
+
+<svg>
+	<use href="images/howto.svg#water" />
+	<use href="images/howto.svg#island" filter="url(images/howto.svg#df)" />
+</svg>
+
+<script type="importmap">
+{
+"imports":
+	{
+	"common/": "../node_modules/@cdpi/common/dist/",
+	"browser/": "../node_modules/@cdpi/browser/dist/",
+
+	"@cdpi/css/": "../node_modules/@cdpi/browser/dist/css/",
+
+	"@howto/": "../dist/"
+	}
+}
+</script>
+
+<script src="scripts/howto.js" type="module"></script>
+
+</body>
+</html>

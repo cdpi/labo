@@ -8,7 +8,9 @@
 	"baseUrl": ".",
 	"paths": {
 		"common/*": ["node_modules/@cdpi/common/dist/*"],
-		"browser/*": ["node_modules/@cdpi/browser/dist/*"]
+		"browser/*": ["node_modules/@cdpi/browser/dist/*"],
+
+		"@cdpi/css/*": ["node_modules/@cdpi/browser/dist/css/*"]
 	},
 	"declaration": true,
 	"esModuleInterop": false,
